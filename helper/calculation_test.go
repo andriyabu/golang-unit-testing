@@ -2,11 +2,22 @@ package helper
 
 import (
 	"fmt"
+	"runtime"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
+
+func TestCalculationSkippAdd(t *testing.T) {
+	if runtime.GOOS == "linux" {
+		t.Skip("can not run on Linux")
+	}
+
+	result := Add(2, 2)
+	require.Equal(t, 4, result, "Result must be 4")
+	fmt.Println("Test Skipp Add Calculation done")
+}
 
 func TestCalculationAdd(t *testing.T) {
 	result := Add(5, 5)
