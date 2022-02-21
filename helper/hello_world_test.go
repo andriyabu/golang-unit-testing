@@ -10,17 +10,20 @@ func TestHelloWorld(t *testing.T) {
 
 	if result != "Hello Andri" {
 		// panic("Test result Fail")
-		t.Fail()
+		// t.Fail()
+
+		t.Error("Result must be 'Hello Andri'")
 	}
 	// still execute
 	fmt.Println("Test Helloworld is done")
 }
 
-func TestHelloWordAbel(t *testing.T) {
-	result := HelloWorld("Abe")
+func TestHelloWorldAbel(t *testing.T) {
+	result := HelloWorld("Abel")
 
 	if result != "Hello Abel" {
-		t.FailNow()
+		// t.FailNow()
+		t.Fatal("Result must be 'Hello Abel'")
 	}
 	// not execute
 	fmt.Println("Test Hello World Abel is done")
