@@ -17,7 +17,7 @@ func TestHelloWorldTable(t *testing.T) {
 		{
 			name:     "HelloWorld(andri)",
 			request:  "andri",
-			expected: "Helloo andri",
+			expected: "Hello andri",
 		},
 		{
 			name:     "HelloWorld(yabu)",
@@ -29,7 +29,7 @@ func TestHelloWorldTable(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			result := HelloWorld(test.request)
-			assert.Equal(t, test.expected, result)
+			require.Equal(t, test.expected, result)
 		})
 	}
 }
@@ -38,7 +38,7 @@ func TestSubTestHello(t *testing.T) {
 	t.Run("assertion", func(t *testing.T) {
 		result := HelloWorld("sayang")
 
-		assert.Equal(t, "Helloo sayang", result, "Result must be 'Hello sayang'")
+		assert.Equal(t, "Hello sayang", result, "Result must be 'Hello sayang'")
 		fmt.Println("Sub test with assertion done")
 	})
 
