@@ -5,7 +5,24 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
+
+func TestSubTestHello(t *testing.T) {
+	t.Run("assertion", func(t *testing.T) {
+		result := HelloWorld("sayang")
+
+		assert.Equal(t, "Hello sayang", result, "Result must be 'Hello sayang'")
+		fmt.Println("Sub test with assertion done")
+	})
+
+	t.Run("require", func(t *testing.T) {
+		result := HelloWorld("Andri")
+
+		require.Equal(t, "Hello Andri", result, "Result must be 'Hello Andri'")
+		fmt.Println("Sub test with require done")
+	})
+}
 
 func TestHelloWorldAssertion(t *testing.T) {
 	result := HelloWorld("sayang")

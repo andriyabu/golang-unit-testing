@@ -7,3 +7,7 @@ func Add(a int, b int) int {
 func Multiply(a, b int) int {
 	return a * b
 }
+
+func Devided(a, b int) int {
+	return a / b
+}
